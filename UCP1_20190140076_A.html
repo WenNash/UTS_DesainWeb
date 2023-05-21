@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>A Day In My Life</title>
+  <style>
+    .navbar {
+      background-color: #727272;
+      padding: 10px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .navlink {
+      margin-right: 20px;
+    }
+
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="navbar">
+    <div class="navlink">Tentang</div>
+    <div class="navlink">Pencarian </div>
+    <div class="navlink">Bantuan</div>
+  </div>
+
+  <div class="header">
+    <div class="greeting"></div>
+    <div class="date-time"></div>
+  </div>
+
+  <div class="card-container">
+    <div class="card"> <img src="C:\Users\weann\Downloads\17077864-1627977523015-ec2171e21a8c3.jpg" widht="250" height="250" > 
+      <p>Saya senang melihat sunset karna sunset adalah salah satu keindahan tuhan yang maha esa</p> </div>
+    <div class="card"> <img src="C:\Users\weann\Downloads\22634887-caba-4b4a-84f3-6481d5935803.png" widht="250" height="250"> \
+      <p>Saya suka mencari makan di pasar karna harganya murah - murah</p> </div>
+    <div class="card"> <img src="C:\Users\weann\Downloads\Ini-Ciri-Ciri-Kecanduan-Game-Online-dan-Cara-Mengatasinya.jpg" widht="250" height="250"> 
+      <p>Saya suka bermain game karna itu membuat saya tidak merasa bosan</p> </div>
+  </div>
+
+  <footer>
+    <footer class="bg-light text-center text-lg-start">
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+        © 2023 Copyright:
+        <a class="text-dark">20190140076</a>
+      </div>
+    </footer>
+  </footer>
+
+  <script>
+    function updateDateTime() {
+      var now = new Date();
+      var greeting = document.querySelector('.greeting');
+      var dateElement = document.querySelector('.date-time');
+
+      var hour = now.getHours();
+      var greetingText = '';
+
+      if (hour >= 0 && hour < 12) {
+        greetingText = 'Selamat Pagi!';
+      } else if (hour >= 12 && hour < 18) {
+        greetingText = 'Selamat Siang!';
+      } else {
+        greetingText = 'Selamat Malam!';
+      }
+
+      greeting.textContent = greetingText;
+      dateElement.textContent = now.toLocaleString();
+    }
+
+    setInterval(updateDateTime, 1000);
+
+    updateDateTime();
+  </script>
+</body>
+</html>
